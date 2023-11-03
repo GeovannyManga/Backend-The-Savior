@@ -1,10 +1,11 @@
+import { checkUserExistence } from "../controllers/userController.js";
 
-
-export const createUser = (req, res) => {
+export const createUser = async(req, res) => {
     try {
-        res.send("chamoy")
-        console.log("esto es una peticion para probar si sirve el handler")
+        const {token} = req.query
+        const response = checkUserExistence(token)
+        
     } catch (error) {
-
+        
     }
 }

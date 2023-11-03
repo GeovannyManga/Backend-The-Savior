@@ -6,6 +6,7 @@ const userSchema = new Schema({
     photo: String,
     edad: Number,
     country: String,
+    token: String,
     shoppingCart: [
         {
             type: mongoose.Schema.ObjectId,

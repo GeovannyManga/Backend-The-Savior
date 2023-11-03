@@ -10,6 +10,7 @@ const locationSchema = new Schema({
 const hotelSchema = new Schema({
     name: String,
     photo: String,
+    token: String,
     bookings: [
         {
             type: mongoose.Schema.ObjectId,

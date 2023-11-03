@@ -15,5 +15,5 @@ const connectToDatabase = async () => {
     }
 };
 
-// Llama a la función para conectar a la base de datos antes de iniciar el servidor
+// exporta a la función para conectar a la base de datos antes de iniciar el servidor
 export default connectToDatabase

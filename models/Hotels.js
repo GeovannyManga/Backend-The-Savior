@@ -1,0 +1,34 @@
+import mongoose from "mongoose";
+import { Schema } from "mongoose";
+
+
+const locationSchema = new Schema({
+    latitude: Number,
+    longitude: Number
+})
+
+const hotelSchema = new Schema({
+    name: String,
+    photo: String,
+    bookings: [
+        {
+            type: mongoose.Schema.ObjectId,
+            ref: 'bookings'
+        }
+    ],
+    location: locationSchema,
+    chats: [
+        {
+            type: mongoose.Schema.ObjectId,
+            ref: 'chats'
+        }
+    ],
+    coments: [{
+        type: mongoose.Schema.ObjectId,
+        ref: 'commets'
+    }]
+})
+
+const hotelModel = mongoose.model('hotels', hotelSchema)
+
+export default hotelModel

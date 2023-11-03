@@ -1,19 +1,21 @@
 import express from "express";
 import morgan from "morgan";
 import routes from "./routes/index.js";
+import db from "./db.js";
 
 
+const app = express();
 
-const app = express()
+//ejecicion del codigo de conexion a la db
+db()
 
-app.use(morgan("dev"))
-app.use(express.json())
+app.use(express.json());
 
-app.use("/",routes)
+app.use("/", routes);
 
-const PORT = 3000
+app.use(morgan("dev"));
+const PORT = 3000;
 
-
-app.listen(PORT, ()=>{
-    console.log("este servidor se esta ejecutando en el puerto", PORT)
-})
+app.listen(PORT, () => {
+    console.log("Este servidor se está ejecutando en el puerto", PORT);
+});

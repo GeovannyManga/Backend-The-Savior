@@ -4,7 +4,7 @@ import { Schema } from "mongoose";
 const bookingsSchema = new Schema({
     userId: {
         type: mongoose.Schema.ObjectId,
-        ref:'users'
+        ref: 'users'
     },
     roomId: {
         type: mongoose.Schema.ObjectId,

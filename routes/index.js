@@ -1,11 +1,10 @@
-import {Router} from "express";
+import { Router } from "express";
+import { createUser } from "../controllers/userController.js";
 
 const routes = Router()
 
-const loco = (req, res)=>{
-    res.send("<h1>hola</h1>")
-}
-routes.get("/", loco)
+
+routes.get("/", createUser)
 
 
 

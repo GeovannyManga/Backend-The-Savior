@@ -4,7 +4,7 @@ import { createUser } from "../handlers/userHandlers.js";
 const routes = Router()
 
 
-routes.get("/create", createUser)
+routes.post("/create", createUser)
 
 
 

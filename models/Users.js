@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
     name: String,
     photo: String,
-    edad: Number,
+    age: Number,
     country: String,
     token: String,
     shoppingCart: [

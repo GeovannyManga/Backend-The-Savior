@@ -13,3 +13,28 @@ export const checkUserExistence = async(token) => {
 
     }
 }
+
+export const create = async(info)=>{
+    try {
+        const usuario = await user.create({
+            name: info.name,
+            photo: info.photo,
+            age: info.age,
+            country: info.country,
+            token: info.token,
+            shoppingCart: [],
+            shopping: [],
+            chats: [],
+            Comments: []
+        
+        })
+        
+
+         return await usuario.save()
+
+
+        
+    } catch (error) {
+        console.log(error)
+    }
+}

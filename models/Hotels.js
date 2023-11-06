@@ -11,6 +11,7 @@ const hotelSchema = new Schema({
     name: String,
     photo: String,
     token: String,
+    state: Boolean,
     bookings: [
         {
             type: mongoose.Schema.ObjectId,

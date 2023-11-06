@@ -7,6 +7,7 @@ const userSchema = new Schema({
     age: Number,
     country: String,
     token: String,
+    state: Boolean,
     shoppingCart: [
         {
             type: mongoose.Schema.ObjectId,

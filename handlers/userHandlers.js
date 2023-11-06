@@ -7,14 +7,15 @@ export const createUser = async (req, res) => {
         const response = await checkUserExistence(token)
 
        if (response) {
-        res.send("lo siento amigo, este usuario ya existe")
+        res.send("this user exist")
        }else{
         const usuario ={
             name: name,
             photo: photo,
             age: age,
             country: country,
-            token: token
+            token: token,
+            state: true
         }
         const responseUser = await create(usuario)
         res.send(responseUser)

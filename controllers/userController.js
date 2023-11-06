@@ -22,11 +22,11 @@ export const create = async(info)=>{
             age: info.age,
             country: info.country,
             token: info.token,
+            state: info.state,
             shoppingCart: [],
             shopping: [],
             chats: [],
             Comments: []
-        
         })
         
 
@@ -38,3 +38,4 @@ export const create = async(info)=>{
         console.log(error)
     }
 }
+

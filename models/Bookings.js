@@ -10,7 +10,7 @@ const bookingsSchema = new Schema({
         type: mongoose.Schema.ObjectId,
         ref: 'rooms'
     },
-    dateCheckount: date,
+    dateCheckount: Date,
     state: Boolean
 })
 

@@ -1,7 +1,6 @@
 import bookings from "../models/bookings.js";
 import users from "../models/users.js";
 import hotels from "../models/hotels.js";
-import mongoose from "mongoose";
 
 
 export const createBooking = async(data)=>{

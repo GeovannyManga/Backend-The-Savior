@@ -8,7 +8,7 @@ const routes = Router()
 
 routes.post("/create", createUser)
 
-routes.post('/', createHotel)
+routes.post('/hotel', createHotel)
 
 routes.post("/booking", handlerCreateBooking)
 

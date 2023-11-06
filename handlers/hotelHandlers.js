@@ -1,13 +1,13 @@
 import { checkHotelExistence, createHotels } from "../controllers/hotelController.js";
 
 
-export const createHotel = async(req, res)=>{
-    const { name, photo, token, location} = req.body
+export const createHotel = async (req, res) => {
+    const { name, photo, token, location } = req.body
     try {
         const checkToken = await checkHotelExistence(token)
         if (checkToken) {
             res.send('this hotel exist')
-        }else{
+        } else {
             const hotel = {
                 name: name,
                 photo: photo,
@@ -21,7 +21,7 @@ export const createHotel = async(req, res)=>{
             const response = await createHotels(hotel)
             res.send(response)
         }
-        
+
     } catch (error) {
         console.log(error)
     }

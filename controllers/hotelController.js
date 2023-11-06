@@ -1,20 +1,20 @@
 import hotels from "../models/hotels.js";
 
 
-export const checkHotelExistence = async(token) => {
+export const checkHotelExistence = async (token) => {
     try {
-       const search = await hotels.findOne({token: token})
-       if (search) {
-           return true
-       }else{
-        return false
-       }
+        const search = await hotels.findOne({ token: token })
+        if (search) {
+            return true
+        } else {
+            return false
+        }
     } catch (error) {
         console.log(error)
     }
 }
 
-export const createHotels = async(info)=>{
+export const createHotels = async (info) => {
     try {
         const hotel = await hotels.create({
             name: info.name,
@@ -27,7 +27,7 @@ export const createHotels = async(info)=>{
             coments: []
         })
 
-         return await hotel.save()
+        return await hotel.save()
 
     } catch (error) {
         console.log(error)

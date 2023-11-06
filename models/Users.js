@@ -8,12 +8,10 @@ const userSchema = new Schema({
     country: String,
     token: String,
     state: Boolean,
-    shoppingCart: [
-        {
-            type: mongoose.Schema.ObjectId,
-            ref: "bookings"
-        }
-    ],
+    shoppingCart:  {
+        type: mongoose.Schema.ObjectId,
+        ref: "shoppingCart"
+    },
     shopping: [
         {
             type: mongoose.Schema.ObjectId,

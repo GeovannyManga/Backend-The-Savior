@@ -18,20 +18,17 @@ export const createUser = async (req, res) => {
                 state: true,
             };
             const responseUser = await create(usuario);
-            console.log("responseUser._id:", responseUser);
+
 
 
             if (responseUser && responseUser._id) {
                 const cartCreationResponse = await createCartController(responseUser._id);
                 if (cartCreationResponse) {
-                    console.log(responseUser);
                     res.send(responseUser);
                 } else {
-                    console.error("Error creating shopping cart");
                     res.status(500).send("Error creating shopping cart");
                 }
             } else {
-                console.error("Error creating user");
                 res.status(500).send("Error creating user");
             }
         }

@@ -25,7 +25,7 @@ const hotelSchema = new Schema({
             ref: 'chats'
         }
     ],
-    coments: [{
+    comments: [{
         type: mongoose.Schema.ObjectId,
         ref: 'commets'
     }]

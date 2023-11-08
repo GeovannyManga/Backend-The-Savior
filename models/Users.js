@@ -24,7 +24,7 @@ const userSchema = new Schema({
             ref: "chats"
         }
     ],
-    Comments: [
+    comments: [
         {
             type: mongoose.Schema.ObjectId,
             ref: "commets"

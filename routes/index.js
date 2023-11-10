@@ -16,7 +16,7 @@ routes.post("/booking", handlerCreateBooking)
 
 routes.post("/comments", commentsCreateHandlers)
 
-routes.get("/createChat", createChatHandler)
+routes.post("/createChat", createChatHandler)
 
 
 

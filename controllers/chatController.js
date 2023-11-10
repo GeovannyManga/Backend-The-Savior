@@ -20,7 +20,7 @@ export const createChatController = async (user, hotel) => {
                 const hotl = await hotels.findById(hotel)
                 hotl.chats.push(checkCreate._id)
                 const resulthotl = await us.save()
-                console.log(resultUs, resulthotl, "todo salio segun lo planeado")
+                return resultUs, resulthotl
             }
             
         }

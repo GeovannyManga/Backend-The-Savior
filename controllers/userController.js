@@ -41,3 +41,13 @@ export const create = async (info) => {
     }
 }
 
+
+export const searchUser = async(token)=>{
+    try {
+        const searching = await user.findOne({token: token})
+        return searching
+        
+    } catch (error) {
+        console.error(error)
+    }
+}

@@ -3,7 +3,7 @@ import { createBooking } from "../controllers/bookingController.js";
 
 
 
-export const handlerCreateBooking = async (req, res) => {
+export const CreateBookingHandler = async (req, res) => {
     const { userId, roomId, dateCheckount } = req.body
     const date = new Date(dateCheckount)
     try {

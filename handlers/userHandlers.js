@@ -1,7 +1,7 @@
-import { checkUserExistence, create } from "../controllers/userController.js";
+import { checkUserExistence, create, searchUser } from "../controllers/userController.js";
 import { createCartController } from "../controllers/carController.js";
 
-export const createUser = async (req, res) => {
+export const createUserHandler = async (req, res) => {
     const { name, photo, age, country, token } = req.body;
     try {
         const response = await checkUserExistence(token);
@@ -37,3 +37,23 @@ export const createUser = async (req, res) => {
         res.status(500).send("Internal server error");
     }
 };
+
+export const searchUserHandler = async (req, res) => {
+    const { token } = req.query;
+    console.log(token);
+    try {
+        const check = await checkUserExistence(token);
+        if (check) {
+            const userData = await searchUser(token);
+            const cleanUserData = userData.toObject(); // Limpiar el objeto de datos de Mongoose
+            
+            delete cleanUserData.token; // Eliminar la propiedad 'token' del objeto limpio
+            
+            res.send(cleanUserData); // Enviar el objeto limpio como respuesta
+        }
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+

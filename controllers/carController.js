@@ -22,3 +22,16 @@ export const createCartController = async (userId) => {
         console.log(error);
     }
 }
+
+
+export const getCartController = async(tok)=>{
+    try {
+        const findToken = await user.findOne({token: tok})
+        if (findToken) {
+           const cartSearch = await cart.findOne({userId: findToken._id})
+           return cartSearch
+        }
+    } catch (error) {
+        console.error(error)
+    }
+}

@@ -1,7 +1,7 @@
 import { checkHotelExistence, createHotels } from "../controllers/hotelController.js";
 
 
-export const createHotel = async (req, res) => {
+export const createHotelHandler = async (req, res) => {
     const { name, photo, token, location } = req.body
     try {
         const checkToken = await checkHotelExistence(token)

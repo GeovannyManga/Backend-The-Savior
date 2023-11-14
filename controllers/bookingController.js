@@ -32,10 +32,6 @@ export const createBooking = async (data) => {
         } else {
             console.log('Hotel no encontrado');
         }
-
-
-
-
     } catch (error) {
         console.log(error)
     }

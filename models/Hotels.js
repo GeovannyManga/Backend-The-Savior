@@ -7,6 +7,8 @@ const locationSchema = new Schema({
     longitude: Number
 })
 
+
+
 const hotelSchema = new Schema({
     name: String,
     photo: String,
@@ -28,6 +30,10 @@ const hotelSchema = new Schema({
     comments: [{
         type: mongoose.Schema.ObjectId,
         ref: 'commets'
+    }],
+    rooms: [{
+        type: mongoose.Schema.ObjectId,
+        ref: 'rooms'
     }]
 })
 

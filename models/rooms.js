@@ -6,6 +6,10 @@ const roomSchema = new Schema({
     photo: String,
     country: String,
     state: Boolean,
+    hotel: {
+        type: mongoose.Schema.ObjectId,
+        ref: "hotels"
+    },
     bookings: [
         {
             type: mongoose.Schema.ObjectId,

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { createUserHandler, searchUserHandler } from "../handlers/userHandlers.js";
-import { createHotelHandler } from "../handlers/hotelHandlers.js";
+import { createHotelHandler, searchHotelHandler } from "../handlers/hotelHandlers.js";
 import { CreateBookingHandler } from "../handlers/bookingHandler.js";
 import { commentsCreateHandlers, getAllCommentsHandler } from "../handlers/commentsHandlers.js";
 import { createChatHandler } from "../handlers/chatHandlers.js";
@@ -28,10 +28,12 @@ routes.post("/rooms", createRoomsHandler)
 
 routes.get("/cartUser", cartHandler)
 
-routes.get("/user", searchUserHandler)
+routes.get("/getUser", searchUserHandler)
 
-routes.get("/allComments",getAllCommentsHandler )
+routes.get("/allComments",getAllCommentsHandler)
 
 routes.get("/getAllRooms", getAllRoomsHandler)
+
+routes.get("/getHotel", searchHotelHandler)
 
 export default routes

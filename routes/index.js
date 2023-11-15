@@ -32,4 +32,6 @@ routes.get("/user", searchUserHandler)
 
 routes.get("/allComments",getAllCommentsHandler )
 
+routes.get("/getAllRooms", (req, res)=> res.send("conseguir todas las habitaciones"))
+
 export default routes

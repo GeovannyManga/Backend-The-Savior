@@ -1,4 +1,5 @@
 import { createRoomsController} from "../controllers/roomsController.js";
+import { errores } from "../controllers/errorController.js";
 
 
 
@@ -7,8 +8,11 @@ export const createRoomsHandler = async(req, res)=>{
     console.log(token, name, photo, hotel)
     try {
         const create = createRoomsController(token, name, photo, hotel)
-        res.send(create)
+        if (create) {
+            res.send(create)
+        }
     } catch (error) {
         console.error(error);
     }
 }
+

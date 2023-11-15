@@ -1,4 +1,5 @@
-import { checkHotelExistence, createHotels } from "../controllers/hotelController.js";
+import { errores } from "../controllers/errorController.js";
+import { checkHotelExistence, createHotels, searcherHotel } from "../controllers/hotelController.js";
 
 
 export const createHotelHandler = async (req, res) => {
@@ -28,5 +29,17 @@ export const createHotelHandler = async (req, res) => {
 }
 
 export const searchHotelHandler = async(req, res)=>{
-res.send("asi es funciona")
+    const {token} = req.query
+try {
+    const check = await checkHotelExistence(token)
+    if (check) {
+        const response = await searcherHotel(token)
+        res.send(response)
+    }else{
+        res.send(errores())
+    }
+    
+} catch (error) {
+    console.error(error);
+}
 }

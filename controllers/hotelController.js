@@ -41,7 +41,6 @@ export const searcherHotel = async(token)=>{
         if (finder) {
           const result = finder.toObject()
           delete result.token
-          console.log(result)
           return result
         }
     } catch (error) {

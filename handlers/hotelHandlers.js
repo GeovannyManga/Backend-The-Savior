@@ -28,5 +28,5 @@ export const createHotelHandler = async (req, res) => {
 }
 
 export const searchHotelHandler = async(req, res)=>{
-res.send("epa")
+res.send("asi es funciona")
 }

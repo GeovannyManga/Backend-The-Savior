@@ -34,3 +34,17 @@ export const createHotels = async (info) => {
     }
 }
 
+
+export const searcherHotel = async(token)=>{
+    try {
+        const finder = await hotels.findOne({token: token})
+        if (finder) {
+          const result = finder.toObject()
+          delete result.token
+          console.log(result)
+          return result
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}

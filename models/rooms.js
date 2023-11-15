@@ -4,7 +4,6 @@ const { Schema } = mongoose;
 const roomSchema = new Schema({
     name: String,
     photo: String,
-    country: String,
     state: Boolean,
     hotel: {
         type: mongoose.Schema.ObjectId,

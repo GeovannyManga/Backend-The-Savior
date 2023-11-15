@@ -5,6 +5,7 @@ import { CreateBookingHandler } from "../handlers/bookingHandler.js";
 import { commentsCreateHandlers, getAllCommentsHandler } from "../handlers/commentsHandlers.js";
 import { createChatHandler } from "../handlers/chatHandlers.js";
 import { cartHandler } from "../handlers/cartHandler.js";
+import { createRoomsHandler } from "../handlers/roomsHandlers.js";
 
 const routes = Router()
 
@@ -20,13 +21,15 @@ routes.post("/comments", commentsCreateHandlers)
 
 routes.post("/createChat", createChatHandler)
 
+routes.post("/rooms", createRoomsHandler)
+
 // rutas get (deben ser independizadas para mejorar la arquitectura de las carpetas)
 
-routes.get("/user", searchUserHandler)
 
 routes.get("/cartUser", cartHandler)
 
-routes.get("/allComments",getAllCommentsHandler )
+routes.get("/user", searchUserHandler)
 
+routes.get("/allComments",getAllCommentsHandler )
 
 export default routes

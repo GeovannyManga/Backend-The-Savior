@@ -5,7 +5,7 @@ import { CreateBookingHandler } from "../handlers/bookingHandler.js";
 import { commentsCreateHandlers, getAllCommentsHandler } from "../handlers/commentsHandlers.js";
 import { createChatHandler } from "../handlers/chatHandlers.js";
 import { cartHandler } from "../handlers/cartHandler.js";
-import { createRoomsHandler } from "../handlers/roomsHandlers.js";
+import { createRoomsHandler, getAllRoomsHandler } from "../handlers/roomsHandlers.js";
 
 const routes = Router()
 
@@ -32,6 +32,6 @@ routes.get("/user", searchUserHandler)
 
 routes.get("/allComments",getAllCommentsHandler )
 
-routes.get("/getAllRooms", (req, res)=> res.send("conseguir todas las habitaciones"))
+routes.get("/getAllRooms", getAllRoomsHandler)
 
 export default routes

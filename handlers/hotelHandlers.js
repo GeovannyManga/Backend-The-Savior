@@ -1,5 +1,5 @@
 import { errores } from "../controllers/errorController.js";
-import { checkHotelExistence, createHotels, searcherHotel } from "../controllers/hotelController.js";
+import { checkHotelExistence, createHotels, searcherHotel,  searcherHotelById } from "../controllers/hotelController.js";
 
 
 export const createHotelHandler = async (req, res) => {
@@ -38,6 +38,19 @@ try {
     }else{
         res.send(errores())
     }
+    
+} catch (error) {
+    console.error(error);
+}
+}
+
+
+export const searchHotelByIdHandler = async(req, res)=>{
+    const {id} = req.params
+try {
+   
+        const response = await searcherHotelById(id)
+        res.send(response)
     
 } catch (error) {
     console.error(error);

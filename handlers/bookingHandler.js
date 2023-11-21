@@ -31,3 +31,13 @@ export const CreateBookingHandler = async (req, res) => {
 
 
 
+export const getUserBookingHandler = async(req, res)=>{
+    const {userId}= req.params
+try {
+    console.log(userId)
+    res.send("conchale")
+    
+} catch (error) {
+    console.error(error);
+}
+}

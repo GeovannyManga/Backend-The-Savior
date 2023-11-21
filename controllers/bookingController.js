@@ -37,3 +37,12 @@ export const createBooking = async (data) => {
     }
 
 }
+
+
+export const getUserBooking = ()=>{
+    try {
+        
+    } catch (error) {
+        console.error(error);
+    }
+}

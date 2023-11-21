@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { createUserHandler, searchUserHandler } from "../handlers/userHandlers.js";
 import { createHotelHandler, searchHotelHandler, searchHotelByIdHandler } from "../handlers/hotelHandlers.js";
-import { CreateBookingHandler } from "../handlers/bookingHandler.js";
+import { CreateBookingHandler, getUserBookingHandler } from "../handlers/bookingHandler.js";
 import { commentsCreateHandlers, getAllCommentsHandler } from "../handlers/commentsHandlers.js";
 import { createChatHandler } from "../handlers/chatHandlers.js";
 import { cartHandler } from "../handlers/cartHandler.js";
@@ -35,7 +35,7 @@ routes.get("/getAllRooms", getAllRoomsHandler)
 
 routes.get("/getHotel", searchHotelHandler)
 
-routes.get("/getUserBooking/:id", (req,res)=> res.send(req.params))
+routes.get("/getUserBooking/:userId", getUserBookingHandler)
 
 routes.get("/getHotelById/:id",searchHotelByIdHandler)
 

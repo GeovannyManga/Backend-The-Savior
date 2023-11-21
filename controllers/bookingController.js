@@ -3,6 +3,7 @@ import users from "../models/users.js";
 import hotels from "../models/hotels.js";
 
 
+
 export const createBooking = async (data) => {
     try {
 
@@ -39,8 +40,17 @@ export const createBooking = async (data) => {
 }
 
 
-export const getUserBooking = ()=>{
+export const getUserBooking = async(userId)=>{
     try {
+        const searchUser = await users.findById(userId)
+        if (searchUser) {
+        const searchBooking =  searchUser.shopping.map(b=> bookings.findById(b) )
+        const response = await Promise.all(searchBooking)
+        return response
+        } else {
+            return false
+        }
+
         
     } catch (error) {
         console.error(error);

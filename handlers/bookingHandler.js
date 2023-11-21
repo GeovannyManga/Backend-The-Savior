@@ -1,5 +1,5 @@
 
-import { createBooking } from "../controllers/bookingController.js";
+import { createBooking, getUserBooking } from "../controllers/bookingController.js";
 
 
 
@@ -34,8 +34,8 @@ export const CreateBookingHandler = async (req, res) => {
 export const getUserBookingHandler = async(req, res)=>{
     const {userId}= req.params
 try {
-    console.log(userId)
-    res.send("conchale")
+    const user = await getUserBooking(userId)
+    res.send(user)
     
 } catch (error) {
     console.error(error);
